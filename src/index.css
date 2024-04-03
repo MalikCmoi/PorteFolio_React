@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+*,::after,::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+  /* height: 100%; */
+}
+
+:root {
+  --dark-primary: #282C33;
+  --dark-white : #FCF7FF;
+  --dark-grey: #C4CAD0;
+  --dark-secondary: #A20021;
+  --spacing-para: 55px;
+}
+ p, a ,h1,h2,h3,h4,h5,h6,li{
+  font-family: 'Fira Code', monospace;
+  color: var(--dark-white);
+  font-size: 18px;
+}
+
+strong{
+  color: var(--dark-secondary);
+}
+
+body{
+  background-color: var(--dark-primary);
+}

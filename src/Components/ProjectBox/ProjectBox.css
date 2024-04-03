@@ -1,0 +1,30 @@
+.card-project{
+    /* border: 1px solid var(--dark-grey); */
+    /* height: 435px */
+}
+
+.card-project img{
+    width: 100%;
+    max-height: 140px;
+}
+
+.technologies{
+    border-bottom: 1px solid var(--dark-grey);
+    border-top: 1px solid var(--dark-grey);
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.card-title{
+    font-size: 24px;
+    padding: 10px 10px;
+}
+.card-descr{
+    color: var(--dark-grey);
+    margin: 0 10px;
+}
+
+.btn-live{
+    display: inline-block;
+    margin: 10px 10px;
+}

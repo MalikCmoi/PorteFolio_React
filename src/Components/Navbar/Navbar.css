@@ -1,0 +1,259 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10%;
+    font-weight: 600;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background-color: var(--dark-primary);
+    transform: translateY(-30px);
+    animation: introNavBar .3s ;
+    animation-fill-mode: forwards;
+}
+
+.navbar-link-container{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: 400;
+}
+.navbar-link:hover{
+    color: var(--dark-white);
+}
+
+
+.navbar-link.active{
+    color: var(--dark-white);
+    font-weight: 600;
+}
+
+.navbar-link::before{
+    content: "#";
+    display: inline-block;
+    color: var(--dark-secondary);
+    font-weight: 400;
+}
+
+.languages{
+    font-weight: 400;
+    color: var(--dark-grey);
+}
+
+.languages:hover , .languages:hover::after{
+    color: var(--dark-white);
+}
+
+.languages::after{
+    content: "V";
+    display: inline-block;
+    margin-left: 5px;
+    scale: 1.2 .5;
+    font-weight: 400;
+    color: var(--dark-grey);
+}
+
+.languages:hover::after{
+    rotate: 180deg;
+}
+
+.navbar-language-container{
+    position: relative;
+    cursor: pointer;
+}
+
+.change-language{
+    position: absolute;
+    width: 100%;
+    border: 1px solid var(--dark-grey);
+    display: none;
+}
+.lang{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--dark-grey);
+}
+
+.lang:hover{
+    color: var(--dark-white);
+}
+
+.navbar-language-container:hover .change-language{
+    display: block;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.reseau{
+    position: absolute;
+    left: 50px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reseau-line{
+    width: 2px;
+    height: 0vh;
+    background: var(--dark-grey);
+    margin-bottom: 15px;
+    animation: reseauLine 1s .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reseauLine {
+    from{
+        height: 0vh;
+    }
+    to{
+        height: 33vh;
+    }
+}
+
+.reseau-img{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: reseauImg .5s 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reseauImg {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:780px){
+    .navbar{
+        justify-content: space-between;
+        padding: 15px 15px;
+        background-color: var(--dark-primary);
+    }
+    .mobile-menu{
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: relative;
+    }
+
+    .mobile-menu::before {
+        display: block;
+        content: "";
+        transform-origin: center;
+        width: 100%;
+        height: 1px;
+        margin: 0;
+        position: absolute;
+        top: 0%;
+        background-color: var(--dark-white);
+        transition: all .2s ease-in-out;
+    }
+    
+    .mobile-menu::after{
+        display: block;
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 0;
+        width: 70%;
+        height: 1px;
+        background-color: var(--dark-white);
+        transition: transform .2s ease-in-out, width .2s .2s ease-in-out;
+
+    }
+    .mobile-menu.active::after{
+        display: block;
+        transform-origin: center;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: rotate(45deg);
+        transition: width .2s ease-in-out, transform .2s .2s ease-in-out;
+    }
+
+    .mobile-menu.active::before{
+        display: block;
+        transform-origin: center;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0) rotate(-45deg);
+        transition: all .2s .2s ease-in-out;
+
+    }
+
+    .navbar-link-container{
+        /* display: none; */
+    }
+    .navbar-link-container{
+        display: none;
+        
+    }
+
+    .navbar-link-container.active{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--dark-primary);
+        top: 50px;
+        left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 15px;
+    }
+    .navbar-link{
+        font-size: 32px;
+
+    }
+    .navbar-language-container{
+        position: absolute;
+        top: 0;
+        right: 15px;
+    }
+    .languages{
+        font-size: 32px;
+    }
+    .lang{
+        font-size: 32px;
+    }
+    .reseau{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1190px) {
+    .reseau{
+        display: none;
+    }
+}
+
+@keyframes introNavBar {
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
